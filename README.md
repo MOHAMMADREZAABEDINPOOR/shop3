@@ -1,154 +1,174 @@
 <div align="center">
 
-<img src="assets/readme/hero.gif" width="1200" alt="COMMERCE · PHP: a compact storefront built around packaged orders and an SQLite cylinder" />
+<img src="assets/readme/hero.gif" width="1200" height="480" alt="NEXTSHOP · PHP — unique animated 3D storefront scene" />
 
-**[English](README.md) · [فارسی](README.fa.md)**
+**[🌐 English](README.md) · [🇮🇷 فارسی](README.fa.md)**
 
 </div>
 
-# 📦 COMMERCE · PHP
+# 📦 NEXTSHOP · PHP
 
-A framework-free PHP storefront with a small MVC/router layer, SQLite initialization, customer/admin pages and bilingual product content.
+**SMALL CORE · BILINGUAL STOREFRONT · CLEAR WORKFLOWS**
 
-[GitHub](https://github.com/MOHAMMADREZAABEDINPOOR/shop3) · [PIMX / Profile](https://github.com/MOHAMMADREZAABEDINPOOR) · [Static artwork](assets/readme/hero.png)
+A compact bilingual storefront built directly with PHP. NextShop brings product discovery, customer accounts, carts, order tracking and an administration area together through a small router and MVC layer. SQLite bootstraps the local catalog on first run, keeping the setup easy to inspect.
 
-| At a glance | Details |
+| At a glance | What is inside |
 |:---|:---|
-| 📦 Experience | Web application / browser experience |
-| 🧰 Built with | `PHP` |
+| 🎯 Focus | Storefront, customer journey and administration |
+| 🧰 Stack | PHP 8.1+ · PDO SQLite · custom MVC/router · plain frontend assets |
 | 🌐 Documentation | [English](README.md) · [فارسی](README.fa.md) |
+| 🎨 Artwork | [Animated](assets/readme/hero.gif) · [Static](assets/readme/hero.png) |
 
-[✨ Features](#features) · [🚀 Getting started](#getting-started) · [⚙️ Configuration](#configuration) · [🌍 Deployment](#deployment)
+[✨ Experience](#experience) · [🚀 Run locally](#setup) · [🧱 Architecture](#architecture) · [🌍 Deployment](#deployment)
 
----
+<a id="experience"></a>
 
-<a id="features"></a>
+## ✨ From the first search to the next order
 
-## ✨ Features
-
-| Area | Included capability |
+| Capability | Experience |
 |:---|:---|
-| ⚡ Workflow | Catalog, categories, reviews and wishlist pages |
-| 🛍️ Commerce | Cart, checkout, coupons and order tracking |
-| 👤 Accounts | Admin product/order/user management |
-| 🌐 Experience | Session controls, CSRF/rate-limit helpers and locale files |
+| 🔎 Discovery | Categories, product pages, live-search endpoints and product galleries/specifications. |
+| 🌐 Bilingual content | English/Persian interface and localized product/category fields. |
+| 🛒 Shopping cart | Session cart, quantity updates, coupon application and a cart-summary API. |
+| 🏠 Customer area | Registration, sign-in, profile, saved orders, wishlists and reviews. |
+| 📦 Checkout + tracking | Final stock checks, address capture, order codes and tracking pages. |
+| 💳 Payment demo | Simulated online success/failure flow and a cash-on-delivery branch. |
+| 🧑‍💼 Administration | Products, categories, users, orders, coupons and banners. |
+| 🗄️ Local bootstrap | Creates the SQLite schema and sample catalog when tables are missing. |
+| 🔑 Application controls | CSRF checks, prepared database queries, session controls and optional field encryption. |
 
-<a id="stack"></a>
+### 🧭 Take a tour
 
-## 🧰 Stack
+1. Start the PHP server and open `/`; the first run creates local sample data.
+2. Browse `/shop`, choose a product and add it to `/cart`.
+3. Create an account or sign in and fill out `/checkout`.
+4. Try simulated payment or cash on delivery, then inspect your order and `/track`.
 
-| Tool | Version / source |
-|---|---|
-| PHP | `8.1+ / PDO SQLite` |
+| Route | Purpose |
+|:---|:---|
+| `/shop · /category/{slug}` | Catalog and category pages |
+| `/product/{slug}` | Product detail |
+| `/cart · /checkout` | Cart and order creation |
+| `/account · /track` | Customer account and tracking |
+| `/admin` | Administration |
+| `/lang/en · /lang/fa` | Interface locale |
 
-<a id="getting-started"></a>
+<a id="setup"></a>
 
-## 🚀 Getting started
+## 🚀 Run it locally
 
-PHP 8.1+, PDO SQLite and writable database/ and public/uploads/ directories; cURL/GD are useful for media handling.
+PHP 8.1+ with PDO SQLite, mbstring and OpenSSL. The database, document-store mirror and upload directories need write access. No Composer or npm build is required for the documented local path.
 
 ```bash
 git clone https://github.com/MOHAMMADREZAABEDINPOOR/shop3.git
 cd shop3
 
-# Copy .env.example to .env and set APP_KEY
+# Copy .env.example to .env.
+# Generate APP_KEY and save the output in .env:
 php -r "echo base64_encode(random_bytes(32)), PHP_EOL;"
 php -S 127.0.0.1:8000 -t public public/router.php
 ```
 
-<a id="configuration"></a>
+Save the generated key as `APP_KEY` in `.env` before using the app. On the first request, missing SQLite tables and demo catalog data are created automatically. The schema uses `database/shop.sqlite`; the document mirror uses `database/mongodb/`. Keep `public/uploads/` writable for media.
 
-## ⚙️ Configuration
+Open **http://127.0.0.1:8000**. The built-in server is for local development.
 
-These names are found in the example configuration or source; not all are required. Check their defaults/usage in those files and supply secrets only in your local or hosting environment.
+### 🧪 Demo accounts
 
-| Name | Role |
-|---|---|
-| `APP_DEBUG` | Application setting; inspect its definition |
-| `APP_KEY` | Credential/connection setting; keep private |
-| `APP_NAME` | Application setting; inspect its definition |
-| `APP_TAGLINE` | Application setting; inspect its definition |
-| `APP_URL` | Application setting; inspect its definition |
-| `CONTACT_ADDRESS` | Application setting; inspect its definition |
-| `CONTACT_EMAIL` | Application setting; inspect its definition |
-| `CONTACT_HOURS` | Application setting; inspect its definition |
-| `CONTACT_PHONE` | Application setting; inspect its definition |
-| `DB_DRIVER` | Application setting; inspect its definition |
-| `DB_HOST` | Application setting; inspect its definition |
-| `DB_NAME` | Application setting; inspect its definition |
-| `DB_PASS` | Application setting; inspect its definition |
-| `DB_PORT` | Application setting; inspect its definition |
-| `DB_USER` | Application setting; inspect its definition |
-| `FORCE_HTTPS` | Application setting; inspect its definition |
-| `GA_ID` | Application setting; inspect its definition |
-| `SESSION_IDLE_TIMEOUT` | Application setting; inspect its definition |
-| `SESSION_LIFETIME` | Application setting; inspect its definition |
-| `SESSION_REMEMBER_DAYS` | Application setting; inspect its definition |
+Created by the local seed workflow. Use them only in a fresh demonstration database; replace seeded accounts/passwords before public hosting.
 
-<a id="usage"></a>
+| Role | Email | Demo password |
+|:---|:---|:---|
+| Admin | `admin@nextshop.ir` | `admin123` |
+| Customer | `sara@example.com` | `123456` |
 
-## 🎯 Usage
+## ⚙️ Configuration that matters
 
-Copy .env.example to .env, generate APP_KEY, enable PDO SQLite and start PHP with public/router.php. The SQLite schema/sample content initializes on first use. Set your web-server document root to public/.
+Start from [`.env.example`](.env.example); keep real values in your local `.env` or hosting environment.
 
-<a id="project-structure"></a>
+| Setting | Role |
+|:---|:---|
+| `APP_NAME / APP_TAGLINE / APP_URL` | Brand and canonical base URL. |
+| `APP_DEBUG` | true locally; false on public hosting. |
+| `APP_KEY` | Base64-encoded 32-byte key for encrypted fields. |
+| `DB_DRIVER` | SQLite is the documented local path. |
+| `SESSION_LIFETIME / SESSION_IDLE_TIMEOUT` | Session lifetime and inactivity timeout, in seconds. |
+| `FORCE_HTTPS` | Enable HTTPS redirects for production hosting. |
+| `CONTACT_* / GA_ID` | Contact details and optional analytics identifier. |
 
-## 🗂️ Project structure
+<a id="architecture"></a>
 
-| Path | Role |
-|---|---|
-| [`app/`](app/) | Application routes / PHP application |
-| [`assets/`](assets/) | Brand/media/README assets |
-| [`database/`](database/) | Database schema/sample resources |
-| [`public/`](public/) | Public web assets |
-| [`scripts/`](scripts/) | Development and maintenance utilities |
+## 🧱 How the application fits together
 
-<a id="commands-and-checks"></a>
+```mermaid
+flowchart LR
+    Browser --> Router[public/index.php + router]
+    Router --> Controllers[Storefront / account / admin]
+    Controllers --> Core[Cart + auth + database helpers]
+    Core --> SQL[(SQLite primary store)]
+    Core -. CRUD mirror .-> Documents[Document-store mirror]
+    Controllers --> Views[PHP templates + translations]
+```
 
-## 🧪 Commands and checks
+| Path | Responsibility |
+|:---|:---|
+| [`public/index.php`](public/index.php) · [`public/router.php`](public/router.php) | Web entry point and local development router |
+| [`app/Controllers/`](app/Controllers/) | Storefront, customer and admin actions |
+| [`app/Core/`](app/Core/) | Router, database, schema, seed, auth, CSRF and localization |
+| [`app/Views/`](app/Views/) · [`app/lang/`](app/lang/) | Templates and translation strings |
+| [`database/`](database/) | Generated local database and document mirror |
+| [`public/assets/`](public/assets/) · [`public/uploads/`](public/uploads/) | Interface assets and uploaded media |
 
-No automated test command is declared in a manifest. Verify behavior through a local example run.
+## 💳 Payment behavior
+
+The online payment screen is a local simulator that marks the order according to the selected test outcome. It is not connected to a bank. Cash on delivery is a separate order branch. Add and validate a real payment provider before accepting online payments.
 
 <a id="deployment"></a>
 
-## 🌍 Deployment
+## 🌍 From local development to hosting
 
-Configure production secrets, HTTPS, an independent database and allowed hosts. PHP hosting must use public/ as document root; Django needs static-file and WSGI/ASGI configuration. Development servers are for local use.
+Use `public/` as the web server document root and rewrite application routes to `index.php`; `public/.htaccess` provides Apache rules. Set the real `APP_URL`, `APP_DEBUG=false`, `FORCE_HTTPS=true` and a persistent 32-byte `APP_KEY`. Keep the database and `.env` outside the public document root. SQLite is the documented database path; the MySQL branch and native MongoDB mode need separate deployment validation. Without a valid encryption key/OpenSSL, encrypted fields can fall back to plaintext storage.
 
-<a id="limitations"></a>
+## 🧪 Checks for developers
 
-## 📌 Limitations
+| Command | Purpose |
+|:---|:---|
+| `php -l public/index.php` | Check the front controller syntax |
+| `php -l app/bootstrap.php` | Check application bootstrap syntax |
+| `php -S 127.0.0.1:8000 -t public public/router.php` | Start the local smoke-test server |
 
-Default seeded passwords are only for local demonstration. MySQL configuration and MongoDB export helpers are present, but SQLite is the primary documented path. Do not publish database files or enable APP_DEBUG on public hosting.
+These are available validation commands, not a claim that the full application was tested during this documentation update.
 
-<a id="troubleshooting"></a>
+## 🧩 Troubleshooting
 
-## 🛠️ Troubleshooting
+| Symptom | Try this |
+|:---|:---|
+| Could not find driver | Enable PDO SQLite in the PHP configuration used by this terminal. |
+| Call to undefined function mb_* | Enable mbstring. |
+| Routes return 404 | Use `public/router.php` with php -S or configure the production rewrite rule. |
 
-- Missing packages: install dependencies using the project’s package manager.
-- API/network failure: check the configured origin, provider and hosting bindings.
-- Old assets: rebuild when a build script exists, then clear the browser cache.
+## 🧭 Three approaches to commerce
 
-<a id="contributing"></a>
+| Project | Approach |
+|:---|:---|
+| [SHOP 01](https://github.com/MOHAMMADREZAABEDINPOOR/shop) | Django domain apps, stock-aware ordering and an operations dashboard |
+| [SHOP 02](https://github.com/MOHAMMADREZAABEDINPOOR/shop2) | Laravel services, product variants and a role-gated back office |
+| [NEXTSHOP](https://github.com/MOHAMMADREZAABEDINPOOR/shop3) | Direct PHP, a small MVC/router layer and SQLite bootstrap |
 
-## 🤝 Contributing
+## 🤝 Feedback & contribution
 
-Create a focused branch, verify the affected behavior and explain the change clearly. Keep private data, build outputs and local databases out of commits.
+Open an issue with the page, expected behavior and steps to reproduce. For code changes, use a focused branch and the relevant checks.
 
-<a id="license"></a>
+[Issues](https://github.com/MOHAMMADREZAABEDINPOOR/shop3/issues) · [PIMX](https://github.com/MOHAMMADREZAABEDINPOOR)
 
 ## 📄 License
 
-No repository-level license file is included in this snapshot. Public visibility alone does not grant reuse rights; contact the repository owner for terms.
-
----
-
-Part of **PIMX** · Documentation in English and Persian.
+This snapshot has no repository-level license file. Contact the owner for reuse terms.
 
 ---
 
 <div align="center">
 
-📦 **COMMERCE · PHP** · [English](README.md) · [فارسی](README.fa.md)
+📦 **NEXTSHOP · PHP** · [English](README.md) · [فارسی](README.fa.md)
 
 </div>
