@@ -1,33 +1,49 @@
 <div align="center">
 
-<img src="assets/readme/hero.gif" width="1200" alt="COMMERCE · PHP — rotating 3D geometry" />
+<img src="assets/readme/hero.gif" width="1200" alt="COMMERCE · PHP: a compact storefront built around packaged orders and an SQLite cylinder" />
 
 **[English](README.md) · [فارسی](README.fa.md)**
 
-<img src="assets/readme/identity.svg" width="1200" alt="commerce / English and Persian documentation" />
-
 </div>
 
-# COMMERCE · PHP
+# 📦 COMMERCE · PHP
 
 A framework-free PHP storefront with a small MVC/router layer, SQLite initialization, customer/admin pages and bilingual product content.
 
 [GitHub](https://github.com/MOHAMMADREZAABEDINPOOR/shop3) · [PIMX / Profile](https://github.com/MOHAMMADREZAABEDINPOOR) · [Static artwork](assets/readme/hero.png)
 
-## Features
+| At a glance | Details |
+|:---|:---|
+| 📦 Experience | Web application / browser experience |
+| 🧰 Built with | `PHP` |
+| 🌐 Documentation | [English](README.md) · [فارسی](README.fa.md) |
 
-- Catalog, categories, reviews and wishlist pages
-- Cart, checkout, coupons and order tracking
-- Admin product/order/user management
-- Session controls, CSRF/rate-limit helpers and locale files
+[✨ Features](#features) · [🚀 Getting started](#getting-started) · [⚙️ Configuration](#configuration) · [🌍 Deployment](#deployment)
 
-## Stack
+---
+
+<a id="features"></a>
+
+## ✨ Features
+
+| Area | Included capability |
+|:---|:---|
+| ⚡ Workflow | Catalog, categories, reviews and wishlist pages |
+| 🛍️ Commerce | Cart, checkout, coupons and order tracking |
+| 👤 Accounts | Admin product/order/user management |
+| 🌐 Experience | Session controls, CSRF/rate-limit helpers and locale files |
+
+<a id="stack"></a>
+
+## 🧰 Stack
 
 | Tool | Version / source |
 |---|---|
 | PHP | `8.1+ / PDO SQLite` |
 
-## Getting started
+<a id="getting-started"></a>
+
+## 🚀 Getting started
 
 PHP 8.1+, PDO SQLite and writable database/ and public/uploads/ directories; cURL/GD are useful for media handling.
 
@@ -40,7 +56,9 @@ php -r "echo base64_encode(random_bytes(32)), PHP_EOL;"
 php -S 127.0.0.1:8000 -t public public/router.php
 ```
 
-## Configuration
+<a id="configuration"></a>
+
+## ⚙️ Configuration
 
 These names are found in the example configuration or source; not all are required. Check their defaults/usage in those files and supply secrets only in your local or hosting environment.
 
@@ -67,11 +85,15 @@ These names are found in the example configuration or source; not all are requir
 | `SESSION_LIFETIME` | Application setting; inspect its definition |
 | `SESSION_REMEMBER_DAYS` | Application setting; inspect its definition |
 
-## Usage
+<a id="usage"></a>
+
+## 🎯 Usage
 
 Copy .env.example to .env, generate APP_KEY, enable PDO SQLite and start PHP with public/router.php. The SQLite schema/sample content initializes on first use. Set your web-server document root to public/.
 
-## Project structure
+<a id="project-structure"></a>
+
+## 🗂️ Project structure
 
 | Path | Role |
 |---|---|
@@ -81,32 +103,52 @@ Copy .env.example to .env, generate APP_KEY, enable PDO SQLite and start PHP wit
 | [`public/`](public/) | Public web assets |
 | [`scripts/`](scripts/) | Development and maintenance utilities |
 
-## Commands and checks
+<a id="commands-and-checks"></a>
+
+## 🧪 Commands and checks
 
 No automated test command is declared in a manifest. Verify behavior through a local example run.
 
-## Deployment
+<a id="deployment"></a>
+
+## 🌍 Deployment
 
 Configure production secrets, HTTPS, an independent database and allowed hosts. PHP hosting must use public/ as document root; Django needs static-file and WSGI/ASGI configuration. Development servers are for local use.
 
-## Limitations
+<a id="limitations"></a>
+
+## 📌 Limitations
 
 Default seeded passwords are only for local demonstration. MySQL configuration and MongoDB export helpers are present, but SQLite is the primary documented path. Do not publish database files or enable APP_DEBUG on public hosting.
 
-## Troubleshooting
+<a id="troubleshooting"></a>
+
+## 🛠️ Troubleshooting
 
 - Missing packages: install dependencies using the project’s package manager.
 - API/network failure: check the configured origin, provider and hosting bindings.
 - Old assets: rebuild when a build script exists, then clear the browser cache.
 
-## Contributing
+<a id="contributing"></a>
+
+## 🤝 Contributing
 
 Create a focused branch, verify the affected behavior and explain the change clearly. Keep private data, build outputs and local databases out of commits.
 
-## License
+<a id="license"></a>
+
+## 📄 License
 
 No repository-level license file is included in this snapshot. Public visibility alone does not grant reuse rights; contact the repository owner for terms.
 
 ---
 
 Part of **PIMX** · Documentation in English and Persian.
+
+---
+
+<div align="center">
+
+📦 **COMMERCE · PHP** · [English](README.md) · [فارسی](README.fa.md)
+
+</div>
