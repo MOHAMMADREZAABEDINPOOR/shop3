@@ -1,0 +1,7 @@
+# محافظت از پوشه آپلود: هیچ فایل اجرایی/اسکریپتی اجرا نشود
+<FilesMatch "\.(php|phtml|phar|py|pl|sh|cgi)$">
+    Require all denied
+</FilesMatch>
+RemoveHandler .php .phtml .phar
+RemoveType .php .phtml .phar
+Options -ExecCGI -Indexes

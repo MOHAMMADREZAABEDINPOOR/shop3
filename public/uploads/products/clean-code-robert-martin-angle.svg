@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800" width="800" height="800">
+  <defs>
+    <linearGradient id="bg_angle" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#090d16"/>
+      <stop offset="100%" stop-color="#1e1b4b"/>
+    </linearGradient>
+    <radialGradient id="cg_angle" cx="50%" cy="45%" r="50%">
+      <stop offset="0%" stop-color="#9333ea" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#9333ea" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="cardG_angle" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="rgba(255,255,255,0.08)"/>
+      <stop offset="100%" stop-color="rgba(255,255,255,0.02)"/>
+    </linearGradient>
+    <filter id="sh_angle" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="16" stdDeviation="20" flood-color="#000000" flood-opacity="0.6"/>
+    </filter>
+  </defs>
+
+  <rect width="800" height="800" rx="36" fill="url(#bg_angle)"/>
+  <rect width="800" height="800" fill="url(#cg_angle)"/>
+  
+  <circle cx="400" cy="360" r="240" fill="none" stroke="#9333ea" stroke-width="1.5" stroke-dasharray="6 8" opacity="0.3"/>
+  <circle cx="400" cy="360" r="160" fill="none" stroke="#9333ea" stroke-width="1" opacity="0.2"/>
+
+  <!-- Top Badges -->
+  <g transform="translate(48, 44)">
+    <rect width="140" height="34" rx="17" fill="rgba(255,255,255,0.08)" stroke="rgba(255,255,255,0.14)"/>
+    <text x="70" y="22" font-size="12" text-anchor="middle" fill="#f8fafc" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-weight="700" letter-spacing="1">360° VIEW</text>
+  </g>
+  <g transform="translate(610, 44)">
+    <rect width="142" height="34" rx="17" fill="#9333ea" opacity="0.2"/>
+    <text x="71" y="22" font-size="12" text-anchor="middle" fill="#ffffff" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-weight="700">Pearson</text>
+  </g>
+
+  <!-- Center Showcase -->
+  <g transform="translate(400, 350)" filter="url(#sh_angle)">
+    <rect x="-240" y="-140" width="480" height="280" rx="28" fill="url(#cardG_angle)" stroke="rgba(255,255,255,0.12)"/>
+    
+    <circle cx="0" cy="-20" r="64" fill="#9333ea" opacity="0.85"/>
+    <circle cx="0" cy="-20" r="74" fill="none" stroke="#ffffff" stroke-width="2" opacity="0.3"/>
+    <text x="0" y="-7" font-size="30" text-anchor="middle" fill="#ffffff" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-weight="900">Pearson</text>
+
+    <text x="0" y="60" font-size="17" text-anchor="middle" fill="#f1f5f9" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-weight="800">Angle Perspective</text>
+    <text x="0" y="84" font-size="13" text-anchor="middle" fill="#94a3b8" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif">Ergonomic 3D View &amp; Build Profile</text>
+  </g>
+
+  <!-- Bottom Details Bar -->
+  <g transform="translate(48, 620)">
+    <rect width="704" height="132" rx="24" fill="rgba(15, 23, 42, 0.9)" stroke="rgba(255,255,255,0.1)"/>
+    <rect x="0" y="0" width="8" height="132" rx="4" fill="#9333ea"/>
+    
+    <text x="32" y="38" font-size="18" fill="#ffffff" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-weight="800">Clean Code: A Handbook of Agile Softwa</text>
+    
+    <g transform="translate(32, 62)">
+      <circle cx="5" cy="5" r="4" fill="#9333ea"/>
+      <text x="18" y="9" font-size="13" fill="#cbd5e1" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif">Author: Robert C. Martin (Uncle Bob)</text>
+    </g>
+    
+    <g transform="translate(32, 90)">
+      <circle cx="5" cy="5" r="4" fill="#9333ea" opacity="0.7"/>
+      <text x="18" y="9" font-size="13" fill="#94a3b8" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif">Publisher: Prentice Hall / Pearson</text>
+    </g>
+
+    <text x="670" y="82" font-size="12" text-anchor="end" fill="#9333ea" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-weight="700">ORIGINAL GUARANTEED</text>
+  </g>
+</svg>

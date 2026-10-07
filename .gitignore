@@ -1,0 +1,51 @@
+# اسرار و محیط
+.env
+
+# دیتابیس محلی (حاوی هش رمزها و داده مشتریان)
+database/*.sqlite
+database/*.sqlite-*
+database/ratelimit/
+
+# آپلودهای کاربران/محصولات (حجیم و محیطی)
+public/uploads/products/*.jpg
+public/uploads/products/*.jpeg
+public/uploads/products/*.png
+public/uploads/products/*.webp
+!public/uploads/products/.gitkeep
+
+# لاگ و کش
+*.log
+
+# Local credentials, personal data and generated files
+.env
+.env.*
+!.env.example
+.dev.vars
+*.pem
+*.key
+*.session*
+*.sqlite*
+*.db
+*.db-*
+*.log
+*.zip
+__pycache__/
+.venv/
+node_modules/
+vendor/
+dist/
+target/
+release/
+.tools/
+supabase/.temp/
+.mcp.json
+.codex/
+.claude/
+.agents/
+saved_emails*.json
+emails_log*.txt
+debug_log.txt
+*.tsbuildinfo
+storage/framework/
+storage/logs/
+database/mongodb_export.json

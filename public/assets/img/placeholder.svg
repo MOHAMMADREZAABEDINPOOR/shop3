@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" width="600" height="600">
+  <defs>
+    <linearGradient id="ph" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#f1f5f9"/>
+      <stop offset="100%" stop-color="#cbd5e1"/>
+    </linearGradient>
+  </defs>
+  <rect width="600" height="600" rx="36" fill="url(#ph)"/>
+  <g transform="translate(300,260)" stroke="#64748b" stroke-width="10" fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M-90 -60 L-67 -82 L67 -82 L90 -60 L80 60 L-80 60 Z"/>
+    <path d="M-67 -82 L-67 -100 L67 -100 L67 -82"/>
+    <path d="M-80 0 L80 0"/>
+  </g>
+  <text x="300" y="470" font-size="28" text-anchor="middle" fill="#64748b" font-family="Tahoma, sans-serif">بدون تصویر</text>
+</svg>

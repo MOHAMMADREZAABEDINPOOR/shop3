@@ -1,0 +1,29 @@
+[
+    {
+        "_id": "1",
+        "code": "WELCOME10",
+        "type": "percent",
+        "value": 10,
+        "min_total": 500000,
+        "max_uses": 1000,
+        "is_active": true
+    },
+    {
+        "_id": "2",
+        "code": "OFF200",
+        "type": "fixed",
+        "value": 200000,
+        "min_total": 2000000,
+        "max_uses": 500,
+        "is_active": true
+    },
+    {
+        "_id": "3",
+        "code": "MEGA20",
+        "type": "percent",
+        "value": 20,
+        "min_total": 5000000,
+        "max_uses": 200,
+        "is_active": true
+    }
+]

@@ -1,0 +1,189 @@
+[
+    {
+        "_id": "1",
+        "slug": "mobile",
+        "name_en": "Smartphones & Tablets",
+        "name_fa": "موبایل و تبلت",
+        "icon": "mobile",
+        "color": "#2563eb",
+        "description_en": "Smartphones, flagship tablets, smart accessories and fast chargers",
+        "description_fa": "انواع گوشی‌های هوشمند پرچمدار، تبلت‌های پیشرفته و لوازم جانبی اورجینال",
+        "sort_order": 0
+    },
+    {
+        "_id": "2",
+        "slug": "laptop",
+        "name_en": "Laptops & Ultrabooks",
+        "name_fa": "لپ‌تاپ و اولترابوک",
+        "icon": "laptop",
+        "color": "#0891b2",
+        "description_en": "High-performance ultrabooks, gaming laptops and monitors",
+        "description_fa": "لپ‌تاپ‌های مهندسی، گیمینگ و باریک به همراه نمایشگرهای حرفه‌ای",
+        "sort_order": 1
+    },
+    {
+        "_id": "3",
+        "slug": "audio",
+        "name_en": "Audio & Sound Systems",
+        "name_fa": "تجهیزات صوتی و هدفون",
+        "icon": "audio",
+        "color": "#e11d48",
+        "description_en": "Studio headphones, true wireless earbuds and portable speakers",
+        "description_fa": "هدفون‌های حرفه‌ای، هندزفری‌های بی‌سیم و اسپیکرهای پرقدرت بلوتوثی",
+        "sort_order": 2
+    },
+    {
+        "_id": "4",
+        "slug": "wearable",
+        "name_en": "Smartwatches & Wearables",
+        "name_fa": "ساعت و پوشیدنی‌های هوشمند",
+        "icon": "wearable",
+        "color": "#d97706",
+        "description_en": "Smart fitness trackers, GPS running watches and stylish wearables",
+        "description_fa": "ساعت‌های هوشمند پیشرفته، مچ‌بندهای ورزشی و گجت‌های پایش سلامت",
+        "sort_order": 3
+    },
+    {
+        "_id": "5",
+        "slug": "home",
+        "name_en": "Home & Smart Appliances",
+        "name_fa": "خانه هوشمند و لوازم خانگی",
+        "icon": "home",
+        "color": "#059669",
+        "description_en": "Smart cleaning robots, air purifiers and modern home equipment",
+        "description_fa": "جاروبرقی‌های رباتیک، دستگاه‌های تصفیه هوا و تجهیزات مدرن خانگی",
+        "sort_order": 4
+    },
+    {
+        "_id": "6",
+        "slug": "gaming",
+        "name_en": "Gaming Consoles & Gear",
+        "name_fa": "کنسول و تجهیزات گیمینگ",
+        "icon": "gaming",
+        "color": "#7c3aed",
+        "description_en": "Next-gen consoles, mechanical keyboards, gaming controllers and gear",
+        "description_fa": "کنسول‌های بازی نسل نهم، کنترلرهای اختصاصی و تجهیزات حرفه‌ای گیمینگ",
+        "sort_order": 5
+    },
+    {
+        "_id": "7",
+        "slug": "pc-parts",
+        "name_en": "PC Hardware & Components",
+        "name_fa": "قطعات کامپیوتر و سخت‌افزار",
+        "icon": "pc-parts",
+        "color": "#3b82f6",
+        "description_en": "Processors, graphics cards, fast NVMe SSDs and motherboards",
+        "description_fa": "پردازنده‌ها، کارت‌های گرافیک، حافظه‌های پرسرعت SSD و مادربردها",
+        "sort_order": 6
+    },
+    {
+        "_id": "8",
+        "slug": "camera",
+        "name_en": "Cameras & Drones",
+        "name_fa": "دوربین و تصویربرداری",
+        "icon": "camera",
+        "color": "#0284c7",
+        "description_en": "Mirrorless 4K cameras, action cams, aerial drones and studio lenses",
+        "description_fa": "دوربین‌های بدون‌آینه عکاسی، هلی‌شات‌های هوایی و لنزهای تخصصی استودیویی",
+        "sort_order": 7
+    },
+    {
+        "_id": "9",
+        "slug": "fashion",
+        "name_en": "Fashion & Apparel",
+        "name_fa": "مد و پوشاک",
+        "icon": "fashion",
+        "color": "#db2777",
+        "description_en": "Designer sneakers, premium outerwear, genuine leather goods",
+        "description_fa": "کفش‌های ورزشی اورجینال، کاپشن‌های تنفسی و اکسسوری چرم طبیعی",
+        "sort_order": 8
+    },
+    {
+        "_id": "10",
+        "slug": "beauty",
+        "name_en": "Beauty & Personal Care",
+        "name_fa": "زیبایی و سلامت",
+        "icon": "beauty",
+        "color": "#0d9488",
+        "description_en": "Luxury fragrances, advanced skin care, hair styling and personal grooming",
+        "description_fa": "عطر و ادکلن‌های لوکس، محصولات مراقبت از پوست و تجهیزات زیبایی",
+        "sort_order": 9
+    },
+    {
+        "_id": "11",
+        "slug": "sport",
+        "name_en": "Sports & Outdoor Camping",
+        "name_fa": "ورزش و کمپینگ",
+        "icon": "sport",
+        "color": "#ea580c",
+        "description_en": "Camping tents, professional mountain bikes, training weights and bags",
+        "description_fa": "چادرهای ضدآب کمپینگ، دوچرخه‌های کوهستان و لوازم ورزشی حرفه‌ای",
+        "sort_order": 10
+    },
+    {
+        "_id": "12",
+        "slug": "kids",
+        "name_en": "Toys & Hobbies",
+        "name_fa": "اسباب‌بازی و سرگرمی",
+        "icon": "kids",
+        "color": "#65a30d",
+        "description_en": "Educational building sets, RC 4x4 vehicles and family board games",
+        "description_fa": "لگوهای آموزشی، ماشین‌های کنترلی آفرود و بازی‌های فکری خانوادگی",
+        "sort_order": 11
+    },
+    {
+        "_id": "13",
+        "slug": "book",
+        "name_en": "Books & Stationery",
+        "name_fa": "کتاب و نوشت‌افزار",
+        "icon": "book",
+        "color": "#9333ea",
+        "description_en": "Bestselling non-fiction books, luxury fountain pens and notebooks",
+        "description_fa": "پرفروش‌ترین کتاب‌های توسعه فردی، خودکارهای نفیس و دفترهای خاص",
+        "sort_order": 12
+    },
+    {
+        "_id": "14",
+        "slug": "tools",
+        "name_en": "Tools & Technical Gear",
+        "name_fa": "ابزارآلات و تجهیزات فنی",
+        "icon": "tools",
+        "color": "#475569",
+        "description_en": "Cordless brushless power drills, mechanic sets and tactical lighting",
+        "description_fa": "دریل‌های شارژی صنعتی، جعبه‌بکس‌های فولادی و چراغ‌قوه‌های شکاری",
+        "sort_order": 13
+    },
+    {
+        "_id": "15",
+        "slug": "network",
+        "name_en": "Networking & Smart Office",
+        "name_fa": "تجهیزات شبکه و اداری",
+        "icon": "network",
+        "color": "#10b981",
+        "description_en": "Wi-Fi 6 mesh routers, smart office switches and high-speed hubs",
+        "description_fa": "مودم و روترهای نسل ششم، سوئیچ‌های گیگابیت و هاب‌های اداری",
+        "sort_order": 14
+    },
+    {
+        "_id": "16",
+        "slug": "accessories",
+        "name_en": "Digital Accessories",
+        "name_fa": "لوازم جانبی دیجیتال",
+        "icon": "accessories",
+        "color": "#6366f1",
+        "description_en": "Multi-device GaN chargers, durable braided cables and magnetic docks",
+        "description_fa": "شارژرهای سریع GaN، کابل‌های بادوام تایپ سی و پایه‌های مغناطیسی",
+        "sort_order": 15
+    },
+    {
+        "_id": "17",
+        "slug": "kitchen",
+        "name_en": "Kitchen & Dining",
+        "name_fa": "آشپزخانه و پخت‌وپز",
+        "icon": "kitchen",
+        "color": "#ea580c",
+        "description_en": "Espresso machines, airfryers, stand mixers and culinary gear",
+        "description_fa": "دستگاه‌های اسپرسوساز، سرخ‌کن‌های هوشمند، همزن‌ها و لوازم مدرن آشپزخانه",
+        "sort_order": 16
+    }
+]
