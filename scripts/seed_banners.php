@@ -297,10 +297,9 @@ try {
 $stmt = DB::pdo()->prepare("INSERT INTO banners (title, title_en, subtitle, subtitle_en, badge, badge_en, image, link, button_text, button_text_en, position, color, sort_order, is_active)
     VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, 1)");
 
+require_once __DIR__ . '/generate_clean_banners.php';
+
 foreach ($bannersData as $b) {
-    // Generate the SVG file
-    $svgContent = makeBannerGraphicSvg($b['title'], $b['subtitle'], $b['badge'], $b['theme'], $b['position']);
-    file_put_contents($bannerDir . '/' . $b['image'], $svgContent);
 
     $stmt->execute([
         $b['title'],

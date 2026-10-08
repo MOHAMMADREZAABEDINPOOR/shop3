@@ -1,70 +1,110 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 480" width="1200" height="480">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 540 400" width="540" height="400" fill="none">
   <defs>
-    <linearGradient id="bg_purple" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0%" stop-color="#2e1065"/>
-      <stop offset="60%" stop-color="#581c87"/>
-      <stop offset="100%" stop-color="#2e1065"/>
+    <linearGradient id="h1_phone_body" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#475569"/>
+      <stop offset="50%" stop-color="#1e293b"/>
+      <stop offset="100%" stop-color="#0f172a"/>
     </linearGradient>
-    <linearGradient id="accent_purple" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0%" stop-color="#9333ea"/>
-      <stop offset="100%" stop-color="#c084fc"/>
+    <linearGradient id="h1_phone_screen" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#8b5cf6"/>
+      <stop offset="35%" stop-color="#6366f1"/>
+      <stop offset="70%" stop-color="#ec4899"/>
+      <stop offset="100%" stop-color="#3b82f6"/>
     </linearGradient>
-    <radialGradient id="glow_purple" cx="85%" cy="40%" r="55%">
-      <stop offset="0%" stop-color="#c084fc" stop-opacity="0.45"/>
-      <stop offset="100%" stop-color="#581c87" stop-opacity="0"/>
+    <linearGradient id="h1_laptop_body" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#64748b"/>
+      <stop offset="100%" stop-color="#334155"/>
+    </linearGradient>
+    <linearGradient id="h1_laptop_screen" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#1e1b4b"/>
+      <stop offset="50%" stop-color="#312e81"/>
+      <stop offset="100%" stop-color="#4f46e5"/>
+    </linearGradient>
+    <linearGradient id="h1_glass" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.35"/>
+      <stop offset="40%" stop-color="#ffffff" stop-opacity="0.05"/>
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0"/>
+    </linearGradient>
+    <radialGradient id="h1_orb_glow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#a855f7" stop-opacity="0.6"/>
+      <stop offset="100%" stop-color="#a855f7" stop-opacity="0"/>
     </radialGradient>
-    <radialGradient id="glowLeft_purple" cx="15%" cy="60%" r="50%">
-      <stop offset="0%" stop-color="#9333ea" stop-opacity="0.3"/>
-      <stop offset="100%" stop-color="#2e1065" stop-opacity="0"/>
+    <radialGradient id="h1_cyan_glow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#38bdf8" stop-opacity="0.5"/>
+      <stop offset="100%" stop-color="#38bdf8" stop-opacity="0"/>
     </radialGradient>
-    <filter id="cardSh_purple" x="-10%" y="-10%" width="120%" height="120%">
-      <feDropShadow dx="0" dy="16" stdDeviation="24" flood-color="#000" flood-opacity="0.45"/>
+    <filter id="h1_shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="18" stdDeviation="22" flood-color="#000000" flood-opacity="0.55"/>
     </filter>
   </defs>
 
-  <!-- Background -->
-  <rect width="1200" height="480" rx="28" fill="url(#bg_purple)"/>
-  <rect width="1200" height="480" rx="28" fill="url(#glow_purple)"/>
-  <rect width="1200" height="480" rx="28" fill="url(#glowLeft_purple)"/>
+  <!-- Ambient Glow Behind -->
+  <circle cx="280" cy="200" r="180" fill="url(#h1_orb_glow)"/>
+  <circle cx="420" cy="140" r="120" fill="url(#h1_cyan_glow)"/>
 
-  <!-- Geometric Abstract Design Elements -->
-  <g opacity="0.18">
-    <circle cx="1020" cy="240" r="190" fill="none" stroke="#fff" stroke-width="2" stroke-dasharray="10 12"/>
-    <circle cx="1020" cy="240" r="130" fill="none" stroke="#fff" stroke-width="3"/>
-    <circle cx="1020" cy="240" r="70" fill="url(#accent_purple)" opacity="0.6"/>
+  <!-- Floating Background Elements -->
+  <g opacity="0.6">
+    <circle cx="90" cy="90" r="28" fill="none" stroke="#c084fc" stroke-width="2" stroke-dasharray="6 6"/>
+    <circle cx="460" cy="80" r="18" fill="none" stroke="#38bdf8" stroke-width="2"/>
+    <circle cx="480" cy="300" r="34" fill="none" stroke="#f472b6" stroke-width="2.5" stroke-dasharray="8 8"/>
   </g>
 
-  <!-- Badge Tag -->
-  <g transform="translate(64, 56)">
-    <rect width="210" height="38" rx="19" fill="rgba(255,255,255,0.12)" stroke="rgba(255,255,255,0.2)"/>
-    <circle cx="20" cy="19" r="6" fill="#c084fc"/>
-    <text x="36" y="24" font-size="13" fill="#ffffff" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-weight="700">فروش ویژه فصل — تا ۳۰٪ تخفیف</text>
+  <!-- LAPTOP (Left/Back) -->
+  <g transform="translate(60, 110)" filter="url(#h1_shadow)">
+    <!-- Display Shell -->
+    <rect x="0" y="0" width="300" height="190" rx="14" fill="url(#h1_laptop_body)" stroke="#94a3b8" stroke-width="2"/>
+    <!-- Display Bezel & Screen -->
+    <rect x="10" y="10" width="280" height="170" rx="6" fill="#090d16"/>
+    <rect x="14" y="14" width="272" height="162" rx="4" fill="url(#h1_laptop_screen)"/>
+    <!-- Laptop screen dynamic waves -->
+    <path d="M 14 120 Q 80 80, 150 110 T 286 90 L 286 176 L 14 176 Z" fill="#6366f1" opacity="0.45"/>
+    <path d="M 14 140 Q 90 100, 170 135 T 286 120 L 286 176 L 14 176 Z" fill="#ec4899" opacity="0.35"/>
+    <!-- Screen Glass Reflection -->
+    <polygon points="14,14 160,14 60,176 14,176" fill="url(#h1_glass)"/>
+    <!-- Laptop Base / Keyboard Deck -->
+    <path d="M -30 190 L 330 190 L 305 235 L -5 235 Z" fill="#1e293b" stroke="#64748b" stroke-width="1.5"/>
+    <!-- Trackpad -->
+    <rect x="110" y="200" width="80" height="25" rx="4" fill="#0f172a" stroke="#475569" stroke-width="1"/>
+    <!-- Hinge Notch -->
+    <rect x="120" y="188" width="60" height="5" rx="2" fill="#0f172a"/>
   </g>
 
-  <!-- Main Typography -->
-  <text x="64" y="160" font-size="38" fill="#ffffff" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-weight="900">جشنواره فروش ویژه پرچمداران دیجیتال</text>
-  
-  <text x="64" y="210" font-size="19" fill="#e2e8f0" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-weight="400" opacity="0.92">جدیدترین گوشی‌های هوشمند، لپ‌تاپ‌های مهندسی و لوازم جانبی با ضمانت اصالت ۱۰۰٪</text>
-
-  <!-- Visual Card Accent on Right -->
-  <g transform="translate(860, 100)" filter="url(#cardSh_purple)">
-    <rect width="260" height="280" rx="24" fill="rgba(255,255,255,0.07)" stroke="rgba(255,255,255,0.15)"/>
-    <circle cx="130" cy="110" r="54" fill="url(#accent_purple)"/>
-    <circle cx="130" cy="110" r="64" fill="none" stroke="#ffffff" stroke-width="2" opacity="0.3"/>
-    
-    <text x="130" y="210" font-size="18" text-anchor="middle" fill="#ffffff" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-weight="800">NEXTSHOP</text>
-    <text x="130" y="235" font-size="13" text-anchor="middle" fill="#c084fc" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-weight="700">PREMIUM SELECTION</text>
+  <!-- FLAGSHIP SMARTPHONE (Right/Foreground) -->
+  <g transform="translate(260, 45)" filter="url(#h1_shadow)">
+    <!-- Outer Titanium Frame -->
+    <rect x="0" y="0" width="180" height="340" rx="36" fill="url(#h1_phone_body)" stroke="#94a3b8" stroke-width="3"/>
+    <!-- Inner Screen Bezel -->
+    <rect x="6" y="6" width="168" height="328" rx="32" fill="#05050a"/>
+    <!-- Vivid OLED Display -->
+    <rect x="9" y="9" width="162" height="322" rx="29" fill="url(#h1_phone_screen)"/>
+    <!-- Screen Abstract Art -->
+    <circle cx="90" cy="170" r="65" fill="#f43f5e" opacity="0.6"/>
+    <circle cx="120" cy="140" r="50" fill="#a855f7" opacity="0.7"/>
+    <circle cx="60" cy="200" r="45" fill="#38bdf8" opacity="0.65"/>
+    <!-- Dynamic Island Pill -->
+    <rect x="62" y="18" width="56" height="16" rx="8" fill="#000000"/>
+    <circle cx="104" cy="26" r="4" fill="#1e1b4b"/>
+    <!-- Glass Reflection Streak -->
+    <polygon points="9,9 110,9 25,331 9,331" fill="url(#h1_glass)"/>
+    <!-- Speaker & Button Highlights -->
+    <rect x="-4" y="65" width="4" height="24" rx="2" fill="#64748b"/>
+    <rect x="-4" y="100" width="4" height="40" rx="2" fill="#64748b"/>
+    <rect x="-4" y="148" width="4" height="40" rx="2" fill="#64748b"/>
+    <rect x="180" y="90" width="4" height="52" rx="2" fill="#64748b"/>
   </g>
 
-  <!-- Bottom Details Bar -->
-  <g transform="translate(64, 410)">
-    <circle cx="8" cy="8" r="4" fill="#c084fc"/>
-    <text x="24" y="12" font-size="13" fill="#cbd5e1" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-weight="600">ضمانت اصالت ۱۰۰٪ کالای اورجینال</text>
-    
-    <circle cx="280" cy="8" r="4" fill="#c084fc"/>
-    <text x="296" y="12" font-size="13" fill="#cbd5e1" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-weight="600">ارسال سریع سراسری</text>
+  <!-- FLOATING WIRELESS EARBUDS CASE (Front Accent) -->
+  <g transform="translate(195, 270)" filter="url(#h1_shadow)">
+    <rect x="0" y="0" width="90" height="70" rx="26" fill="url(#h1_phone_body)" stroke="#cbd5e1" stroke-width="2"/>
+    <path d="M 0 28 L 90 28" stroke="#0f172a" stroke-width="2"/>
+    <circle cx="45" cy="46" r="3" fill="#22c55e"/>
+    <ellipse cx="45" cy="14" rx="28" ry="6" fill="url(#h1_glass)"/>
+  </g>
 
-    <circle cx="480" cy="8" r="4" fill="#c084fc"/>
-    <text x="496" y="12" font-size="13" fill="#cbd5e1" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-weight="600">۷ روز ضمانت بازگشت کالا</text>
+  <!-- Sparkles -->
+  <g fill="#ffffff" opacity="0.85">
+    <polygon points="460,190 463,200 473,203 463,206 460,216 457,206 447,203 457,200"/>
+    <polygon points="210,50 212,57 219,59 212,61 210,68 208,61 201,59 208,57"/>
+    <polygon points="80,240 82,246 88,248 82,250 80,256 78,250 72,248 78,246"/>
   </g>
 </svg>

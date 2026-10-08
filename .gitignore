@@ -15,6 +15,7 @@ public/uploads/products/*.webp
 
 # لاگ و کش
 *.log
+scratch_*.php
 
 # Local credentials, personal data and generated files
 .env

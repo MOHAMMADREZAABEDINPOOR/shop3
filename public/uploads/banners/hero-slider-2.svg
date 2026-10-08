@@ -1,70 +1,95 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 480" width="1200" height="480">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 540 400" width="540" height="400" fill="none">
   <defs>
-    <linearGradient id="bg_dark" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0%" stop-color="#090d16"/>
-      <stop offset="60%" stop-color="#18181b"/>
+    <linearGradient id="h2_console_body" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#f8fafc"/>
+      <stop offset="60%" stop-color="#cbd5e1"/>
+      <stop offset="100%" stop-color="#94a3b8"/>
+    </linearGradient>
+    <linearGradient id="h2_console_core" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0284c7"/>
+      <stop offset="50%" stop-color="#0f172a"/>
+      <stop offset="100%" stop-color="#0284c7"/>
+    </linearGradient>
+    <linearGradient id="h2_pad_body" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#334155"/>
+      <stop offset="40%" stop-color="#1e293b"/>
       <stop offset="100%" stop-color="#090d16"/>
     </linearGradient>
-    <linearGradient id="accent_dark" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0%" stop-color="#3b82f6"/>
-      <stop offset="100%" stop-color="#60a5fa"/>
+    <linearGradient id="h2_neon_blue" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#38bdf8"/>
+      <stop offset="100%" stop-color="#818cf8"/>
     </linearGradient>
-    <radialGradient id="glow_dark" cx="85%" cy="40%" r="55%">
-      <stop offset="0%" stop-color="#60a5fa" stop-opacity="0.45"/>
-      <stop offset="100%" stop-color="#18181b" stop-opacity="0"/>
+    <radialGradient id="h2_blue_glow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#38bdf8" stop-opacity="0.6"/>
+      <stop offset="100%" stop-color="#38bdf8" stop-opacity="0"/>
     </radialGradient>
-    <radialGradient id="glowLeft_dark" cx="15%" cy="60%" r="50%">
-      <stop offset="0%" stop-color="#3b82f6" stop-opacity="0.3"/>
-      <stop offset="100%" stop-color="#090d16" stop-opacity="0"/>
-    </radialGradient>
-    <filter id="cardSh_dark" x="-10%" y="-10%" width="120%" height="120%">
-      <feDropShadow dx="0" dy="16" stdDeviation="24" flood-color="#000" flood-opacity="0.45"/>
+    <filter id="h2_shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="18" stdDeviation="24" flood-color="#000000" flood-opacity="0.6"/>
     </filter>
   </defs>
 
-  <!-- Background -->
-  <rect width="1200" height="480" rx="28" fill="url(#bg_dark)"/>
-  <rect width="1200" height="480" rx="28" fill="url(#glow_dark)"/>
-  <rect width="1200" height="480" rx="28" fill="url(#glowLeft_dark)"/>
+  <!-- Ambient Glow -->
+  <circle cx="270" cy="200" r="180" fill="url(#h2_blue_glow)"/>
 
-  <!-- Geometric Abstract Design Elements -->
-  <g opacity="0.18">
-    <circle cx="1020" cy="240" r="190" fill="none" stroke="#fff" stroke-width="2" stroke-dasharray="10 12"/>
-    <circle cx="1020" cy="240" r="130" fill="none" stroke="#fff" stroke-width="3"/>
-    <circle cx="1020" cy="240" r="70" fill="url(#accent_dark)" opacity="0.6"/>
+  <!-- NEXT-GEN CONSOLE (Back) -->
+  <g transform="translate(140, 40)" filter="url(#h2_shadow)">
+    <!-- Tower Side Panel 1 -->
+    <path d="M 40 20 Q 70 12, 100 0 L 120 310 Q 70 320, 20 310 Z" fill="url(#h2_console_body)" stroke="#ffffff" stroke-width="1.5"/>
+    <!-- Black Inner Core & LED Strip -->
+    <path d="M 60 10 L 85 5 L 105 315 L 45 315 Z" fill="url(#h2_console_core)"/>
+    <path d="M 63 12 L 67 11 L 82 313 L 78 313 Z" fill="url(#h2_neon_blue)"/>
+    <!-- Tower Side Panel 2 -->
+    <path d="M 80 5 Q 110 0, 140 10 L 160 305 Q 110 325, 60 315 Z" fill="url(#h2_console_body)" opacity="0.9"/>
+    <!-- Disc Slot & Power Button -->
+    <rect x="72" y="240" width="4" height="50" rx="2" fill="#000000"/>
+    <circle cx="74" cy="220" r="3" fill="#38bdf8"/>
   </g>
 
-  <!-- Badge Tag -->
-  <g transform="translate(64, 56)">
-    <rect width="210" height="38" rx="19" fill="rgba(255,255,255,0.12)" stroke="rgba(255,255,255,0.2)"/>
-    <circle cx="20" cy="19" r="6" fill="#60a5fa"/>
-    <text x="36" y="24" font-size="13" fill="#ffffff" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-weight="700">پیشنهاد طلایی گیمرها</text>
-  </g>
-
-  <!-- Main Typography -->
-  <text x="64" y="160" font-size="38" fill="#ffffff" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-weight="900">کنسول‌های نسل ۹ و تجهیزات گیمینگ حرفه‌ای</text>
-  
-  <text x="64" y="210" font-size="19" fill="#e2e8f0" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-weight="400" opacity="0.92">پلی‌استیشن ۵، ایکس‌باکس سریز، کنترلرهای سفارشی و هدست‌های سه‌بعدی با نرخ فریم بالا</text>
-
-  <!-- Visual Card Accent on Right -->
-  <g transform="translate(860, 100)" filter="url(#cardSh_dark)">
-    <rect width="260" height="280" rx="24" fill="rgba(255,255,255,0.07)" stroke="rgba(255,255,255,0.15)"/>
-    <circle cx="130" cy="110" r="54" fill="url(#accent_dark)"/>
-    <circle cx="130" cy="110" r="64" fill="none" stroke="#ffffff" stroke-width="2" opacity="0.3"/>
+  <!-- PRO ESPORTS GAMEPAD (Front Center) -->
+  <g transform="translate(130, 140)" filter="url(#h2_shadow)">
+    <!-- Main Body Chassis -->
+    <path d="M 50 100 C 30 60, 60 20, 110 15 C 135 12, 160 25, 175 40 C 190 25, 215 12, 240 15 C 290 20, 320 60, 300 100 C 285 140, 270 200, 235 210 C 205 220, 190 170, 175 160 C 160 170, 145 220, 115 210 C 80 200, 65 140, 50 100 Z" fill="url(#h2_pad_body)" stroke="#475569" stroke-width="2.5"/>
     
-    <text x="130" y="210" font-size="18" text-anchor="middle" fill="#ffffff" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-weight="800">NEXTSHOP</text>
-    <text x="130" y="235" font-size="13" text-anchor="middle" fill="#60a5fa" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-weight="700">PREMIUM SELECTION</text>
+    <!-- Central Touchpad / LED Lightbar -->
+    <path d="M 130 35 L 220 35 L 210 85 L 140 85 Z" rx="6" fill="#0f172a" stroke="#64748b" stroke-width="1"/>
+    <path d="M 140 38 L 210 38" stroke="url(#h2_neon_blue)" stroke-width="3" stroke-linecap="round"/>
+
+    <!-- Left D-Pad -->
+    <g transform="translate(95, 75)">
+      <rect x="14" y="0" width="14" height="42" rx="4" fill="#1e293b" stroke="#64748b" stroke-width="1"/>
+      <rect x="0" y="14" width="42" height="14" rx="4" fill="#1e293b" stroke="#64748b" stroke-width="1"/>
+    </g>
+
+    <!-- Right Action Buttons (ABXY) -->
+    <g transform="translate(230, 75)">
+      <circle cx="21" cy="7" r="6" fill="#1e293b" stroke="#f43f5e" stroke-width="2"/>
+      <circle cx="35" cy="21" r="6" fill="#1e293b" stroke="#38bdf8" stroke-width="2"/>
+      <circle cx="21" cy="35" r="6" fill="#1e293b" stroke="#22c55e" stroke-width="2"/>
+      <circle cx="7" cy="21" r="6" fill="#1e293b" stroke="#eab308" stroke-width="2"/>
+    </g>
+
+    <!-- Dual Analog Thumbsticks -->
+    <!-- Left Stick -->
+    <g transform="translate(125, 115)">
+      <circle cx="22" cy="22" r="22" fill="#090d16" stroke="#475569" stroke-width="2"/>
+      <circle cx="22" cy="22" r="16" fill="#1e293b"/>
+      <circle cx="22" cy="22" r="7" fill="none" stroke="#38bdf8" stroke-width="2"/>
+    </g>
+    <!-- Right Stick -->
+    <g transform="translate(180, 115)">
+      <circle cx="22" cy="22" r="22" fill="#090d16" stroke="#475569" stroke-width="2"/>
+      <circle cx="22" cy="22" r="16" fill="#1e293b"/>
+      <circle cx="22" cy="22" r="7" fill="none" stroke="#818cf8" stroke-width="2"/>
+    </g>
+
+    <!-- Brand / Home Button -->
+    <circle cx="175" cy="105" r="6" fill="#38bdf8"/>
   </g>
 
-  <!-- Bottom Details Bar -->
-  <g transform="translate(64, 410)">
-    <circle cx="8" cy="8" r="4" fill="#60a5fa"/>
-    <text x="24" y="12" font-size="13" fill="#cbd5e1" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-weight="600">ضمانت اصالت ۱۰۰٪ کالای اورجینال</text>
-    
-    <circle cx="280" cy="8" r="4" fill="#60a5fa"/>
-    <text x="296" y="12" font-size="13" fill="#cbd5e1" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-weight="600">ارسال سریع سراسری</text>
-
-    <circle cx="480" cy="8" r="4" fill="#60a5fa"/>
-    <text x="496" y="12" font-size="13" fill="#cbd5e1" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-weight="600">۷ روز ضمانت بازگشت کالا</text>
+  <!-- Glowing Gaming Accents -->
+  <g fill="#38bdf8" opacity="0.8">
+    <polygon points="80,120 83,126 89,128 83,130 80,136 77,130 71,128 77,126"/>
+    <polygon points="460,180 463,188 472,190 463,192 460,200 457,192 448,190 457,188"/>
+    <polygon points="380,60 382,65 388,67 382,69 380,74 378,69 372,67 378,65"/>
   </g>
 </svg>

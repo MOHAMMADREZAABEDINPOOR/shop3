@@ -5,46 +5,76 @@ $isEn = !I18n::isRtl();
 $heroProduct = $featured[0] ?? null;
 $heroSecond = $deals[0] ?? null;
 $arrowIcon = $isEn ? 'arrow-right' : 'arrow-left';
+
+$resolveBannerGradient = function (?string $color, string $default = '#4f46e5'): string {
+    $presets = [
+        'purple'          => 'linear-gradient(135deg, #3b1975 0%, #1c0e3b 55%, #0a0618 95%)',
+        'gradient-purple' => 'linear-gradient(135deg, #3b1975 0%, #1c0e3b 55%, #0a0618 95%)',
+        'dark'            => 'linear-gradient(135deg, #1e293b 0%, #0f172a 55%, #050811 95%)',
+        'gradient-dark'   => 'linear-gradient(135deg, #1e293b 0%, #0f172a 55%, #050811 95%)',
+        'blue'            => 'linear-gradient(135deg, #0369a1 0%, #0c2340 55%, #030d1a 95%)',
+        'gradient-blue'   => 'linear-gradient(135deg, #0369a1 0%, #0c2340 55%, #030d1a 95%)',
+        'emerald'         => 'linear-gradient(135deg, #047857 0%, #064e3b 55%, #021a15 95%)',
+        'gradient-emerald'=> 'linear-gradient(135deg, #047857 0%, #064e3b 55%, #021a15 95%)',
+        'amber'           => 'linear-gradient(135deg, #b45309 0%, #78350f 55%, #240e02 95%)',
+        'gradient-amber'  => 'linear-gradient(135deg, #b45309 0%, #78350f 55%, #240e02 95%)',
+        'rose'            => 'linear-gradient(135deg, #be123c 0%, #881337 55%, #2a0310 95%)',
+        'gradient-rose'   => 'linear-gradient(135deg, #be123c 0%, #881337 55%, #2a0310 95%)',
+    ];
+    if (!$color) {
+        return $presets['purple'];
+    }
+    if (isset($presets[$color])) {
+        return $presets[$color];
+    }
+    if (str_starts_with($color, '#')) {
+        return "linear-gradient(135deg, {$color} 0%, #0a0618 90%)";
+    }
+    return $presets['purple'];
+};
 ?>
 <!-- هیرو -->
 <?php if (!empty($heroBanners)): ?>
-<section class="container hero-slider-wrap">
-    <div class="hero-slider">
-        <?php foreach ($heroBanners as $idx => $b): ?>
-            <?php
-                $bTitle = $isEn && !empty($b['title_en']) ? $b['title_en'] : $b['title'];
-                $bSub = $isEn && !empty($b['subtitle_en']) ? $b['subtitle_en'] : $b['subtitle'];
-                $bBadge = $isEn && !empty($b['badge_en']) ? $b['badge_en'] : ($b['badge'] ?: ($isEn ? 'Special Offer' : 'فروش ویژه'));
-                $bBtn = $isEn && !empty($b['button_text_en']) ? $b['button_text_en'] : ($b['button_text'] ?: ($isEn ? 'Shop Now' : 'مشاهده و خرید'));
-                $bBg = $b['color'] ?: '#4f46e5';
-            ?>
-            <div class="hero-slide <?= $idx === 0 ? 'active' : '' ?>" style="background: linear-gradient(135deg, <?= e($bBg) ?>, #0a0618 85%);">
-                <div class="hero-slide-content">
-                    <span class="hero-slide-badge"><?= icon('zap', 14) ?> <?= e($bBadge) ?></span>
-                    <h2><?= e($bTitle) ?></h2>
-                    <p><?= e($bSub) ?></p>
-                    <div class="hero-actions">
-                        <a href="<?= e($b['link'] ?: '/shop') ?>" class="btn btn-primary btn-lg"><?= icon('cart', 18) ?> <?= e($bBtn) ?> <?= icon($arrowIcon, 16) ?></a>
-                        <a href="/shop" class="btn btn-ghost btn-lg"><?= __('browse_all', 'مشاهده همه محصولات') ?></a>
+<section class="section hero-slider-section">
+    <div class="container">
+        <div class="hero-slider-wrap">
+            <div class="hero-slider">
+                <?php foreach ($heroBanners as $idx => $b): ?>
+                    <?php
+                        $bTitle = $isEn && !empty($b['title_en']) ? $b['title_en'] : $b['title'];
+                        $bSub = $isEn && !empty($b['subtitle_en']) ? $b['subtitle_en'] : $b['subtitle'];
+                        $bBadge = $isEn && !empty($b['badge_en']) ? $b['badge_en'] : ($b['badge'] ?: ($isEn ? 'Special Offer' : 'فروش ویژه'));
+                        $bBtn = $isEn && !empty($b['button_text_en']) ? $b['button_text_en'] : ($b['button_text'] ?: ($isEn ? 'Shop Now' : 'مشاهده و خرید'));
+                    ?>
+                    <div class="hero-slide <?= $idx === 0 ? 'active' : '' ?>" style="background: <?= $resolveBannerGradient($b['color'], '#4f46e5') ?>;">
+                        <div class="hero-slide-content">
+                            <span class="hero-slide-badge"><?= icon('zap', 14) ?> <?= e($bBadge) ?></span>
+                            <h2><?= e($bTitle) ?></h2>
+                            <p><?= e($bSub) ?></p>
+                            <div class="hero-actions">
+                                <a href="<?= e($b['link'] ?: '/shop') ?>" class="btn btn-primary btn-lg"><?= icon('cart', 18) ?> <?= e($bBtn) ?> <?= icon($arrowIcon, 16) ?></a>
+                                <a href="/shop" class="btn btn-ghost btn-lg"><?= __('browse_all', 'مشاهده همه محصولات') ?></a>
+                            </div>
+                        </div>
+                        <div class="hero-slide-visual">
+                            <?php if ($b['image']): ?>
+                                <img src="<?= e(banner_image($b['image'])) ?>" alt="<?= e($bTitle) ?>">
+                            <?php endif; ?>
+                        </div>
                     </div>
-                </div>
-                <div class="hero-slide-visual">
-                    <?php if ($b['image']): ?>
-                        <img src="<?= e(banner_image($b['image'])) ?>" alt="<?= e($bTitle) ?>">
-                    <?php endif; ?>
-                </div>
+                <?php endforeach; ?>
             </div>
-        <?php endforeach; ?>
-    </div>
-    <?php if (count($heroBanners) > 1): ?>
-        <button class="hero-slider-nav prev" aria-label="Previous"><?= icon($isEn ? 'arrow-left' : 'arrow-right', 20) ?></button>
-        <button class="hero-slider-nav next" aria-label="Next"><?= icon($isEn ? 'arrow-right' : 'arrow-left', 20) ?></button>
-        <div class="hero-slider-dots">
-            <?php foreach ($heroBanners as $idx => $b): ?>
-                <button class="hero-slider-dot <?= $idx === 0 ? 'active' : '' ?>" aria-label="Slide <?= $idx + 1 ?>"></button>
-            <?php endforeach; ?>
+            <?php if (count($heroBanners) > 1): ?>
+                <button class="hero-slider-nav prev" aria-label="Previous"><?= icon($isEn ? 'arrow-left' : 'arrow-right', 20) ?></button>
+                <button class="hero-slider-nav next" aria-label="Next"><?= icon($isEn ? 'arrow-right' : 'arrow-left', 20) ?></button>
+                <div class="hero-slider-dots">
+                    <?php foreach ($heroBanners as $idx => $b): ?>
+                        <button class="hero-slider-dot <?= $idx === 0 ? 'active' : '' ?>" aria-label="Slide <?= $idx + 1 ?>"></button>
+                    <?php endforeach; ?>
+                </div>
+            <?php endif; ?>
         </div>
-    <?php endif; ?>
+    </div>
 </section>
 <?php else: ?>
 <section class="hero">
@@ -171,7 +201,7 @@ $arrowIcon = $isEn ? 'arrow-right' : 'arrow-left';
                         $bBtn = $isEn && !empty($b['button_text_en']) ? $b['button_text_en'] : ($b['button_text'] ?: ($isEn ? 'Shop Now' : 'مشاهده و خرید'));
                         $bgColor = $b['color'] ?: '#2563eb';
                     ?>
-                    <a href="<?= e($b['link'] ?: '/shop') ?>" class="promo-poster-card" style="background: linear-gradient(135deg, <?= e($bgColor) ?>, #0b0f19 90%);">
+                    <a href="<?= e($b['link'] ?: '/shop') ?>" class="promo-poster-card" style="background: <?= $resolveBannerGradient($b['color'], '#2563eb') ?>;">
                         <div class="promo-poster-text">
                             <span class="promo-poster-tag"><?= e($bBadge) ?></span>
                             <h3><?= e($bTitle) ?></h3>
@@ -228,7 +258,7 @@ $arrowIcon = $isEn ? 'arrow-right' : 'arrow-left';
                 $mBtn = $isEn && !empty($mb['button_text_en']) ? $mb['button_text_en'] : ($mb['button_text'] ?: ($isEn ? 'Shop Now' : 'همین حالا خرید کنید'));
                 $mColor = $mb['color'] ?: '#4f46e5';
             ?>
-            <div class="promo-banner" style="background: linear-gradient(120deg, <?= e($mColor) ?>, #1e1b4b 90%);">
+            <div class="promo-banner" style="background: <?= $resolveBannerGradient($mb['color'], '#4f46e5') ?>;">
                 <div class="promo-banner-text">
                     <span class="promo-banner-tag"><?= icon('gift', 16) ?> <?= e($mBadge) ?></span>
                     <h3><?= e($mTitle) ?></h3>
@@ -287,7 +317,7 @@ $arrowIcon = $isEn ? 'arrow-right' : 'arrow-left';
                     $dBtn = $isEn && !empty($db['button_text_en']) ? $db['button_text_en'] : ($db['button_text'] ?: ($isEn ? 'Explore' : 'مشاهده بیشتر'));
                     $dColor = $db['color'] ?: '#0284c7';
                 ?>
-                <a href="<?= e($db['link'] ?: '/shop') ?>" class="dual-banner-card" style="background: linear-gradient(130deg, <?= e($dColor) ?>, #0c0a1d 92%);">
+                <a href="<?= e($db['link'] ?: '/shop') ?>" class="dual-banner-card" style="background: <?= $resolveBannerGradient($db['color'], '#0284c7') ?>;">
                     <div class="dual-banner-text">
                         <span class="dual-banner-tag"><?= icon('zap', 14) ?> <?= e($dBadge) ?></span>
                         <h3><?= e($dTitle) ?></h3>
@@ -417,7 +447,7 @@ $arrowIcon = $isEn ? 'arrow-right' : 'arrow-left';
 ?>
 <section class="section">
     <div class="container">
-        <div class="bottom-mega-banner" style="background: linear-gradient(120deg, <?= e($bbColor) ?>, #3b0764 55%, #050510 95%);">
+        <div class="bottom-mega-banner" style="background: <?= $resolveBannerGradient($bb['color'], '#ec4899') ?>;">
             <div class="bottom-mega-content">
                 <span class="bottom-mega-badge"><?= icon('zap', 15) ?> <?= e($bbBadge) ?></span>
                 <h2><?= e($bbTitle) ?></h2>

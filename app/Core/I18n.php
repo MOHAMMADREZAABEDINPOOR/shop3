@@ -44,8 +44,9 @@ class I18n
             $chosen = $_COOKIE['ns_lang'];
         }
 
-        // Default to English as requested
-        self::$locale = $chosen ?? 'en';
+        // Default locale from env (default 'fa'), fallback to 'en'
+        $defaultLocale = strtolower((string)env('APP_LOCALE', 'fa'));
+        self::$locale = $chosen ?? (in_array($defaultLocale, self::SUPPORTED, true) ? $defaultLocale : 'fa');
 
         // Persist in session and cookie
         $_SESSION['ns_lang'] = self::$locale;

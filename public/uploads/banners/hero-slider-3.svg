@@ -1,70 +1,84 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 480" width="1200" height="480">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 540 400" width="540" height="400" fill="none">
   <defs>
-    <linearGradient id="bg_blue" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0%" stop-color="#0c2340"/>
-      <stop offset="60%" stop-color="#0369a1"/>
-      <stop offset="100%" stop-color="#0c2340"/>
+    <linearGradient id="h3_cam_body" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#334155"/>
+      <stop offset="50%" stop-color="#1e293b"/>
+      <stop offset="100%" stop-color="#090d16"/>
     </linearGradient>
-    <linearGradient id="accent_blue" x1="0" y1="0" x2="1" y2="1">
+    <linearGradient id="h3_lens_glass" x1="0" y1="0" x2="1" y2="1">
       <stop offset="0%" stop-color="#0284c7"/>
-      <stop offset="100%" stop-color="#38bdf8"/>
+      <stop offset="40%" stop-color="#0369a1"/>
+      <stop offset="70%" stop-color="#0f172a"/>
+      <stop offset="100%" stop-color="#0284c7"/>
     </linearGradient>
-    <radialGradient id="glow_blue" cx="85%" cy="40%" r="55%">
-      <stop offset="0%" stop-color="#38bdf8" stop-opacity="0.45"/>
-      <stop offset="100%" stop-color="#0369a1" stop-opacity="0"/>
+    <linearGradient id="h3_glass_refl" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#38bdf8" stop-opacity="0.6"/>
+      <stop offset="100%" stop-color="#38bdf8" stop-opacity="0"/>
+    </linearGradient>
+    <radialGradient id="h3_cyan_orb" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#06b6d4" stop-opacity="0.5"/>
+      <stop offset="100%" stop-color="#06b6d4" stop-opacity="0"/>
     </radialGradient>
-    <radialGradient id="glowLeft_blue" cx="15%" cy="60%" r="50%">
-      <stop offset="0%" stop-color="#0284c7" stop-opacity="0.3"/>
-      <stop offset="100%" stop-color="#0c2340" stop-opacity="0"/>
-    </radialGradient>
-    <filter id="cardSh_blue" x="-10%" y="-10%" width="120%" height="120%">
-      <feDropShadow dx="0" dy="16" stdDeviation="24" flood-color="#000" flood-opacity="0.45"/>
+    <filter id="h3_shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="18" stdDeviation="22" flood-color="#000000" flood-opacity="0.6"/>
     </filter>
   </defs>
 
-  <!-- Background -->
-  <rect width="1200" height="480" rx="28" fill="url(#bg_blue)"/>
-  <rect width="1200" height="480" rx="28" fill="url(#glow_blue)"/>
-  <rect width="1200" height="480" rx="28" fill="url(#glowLeft_blue)"/>
+  <!-- Ambient Glow -->
+  <circle cx="270" cy="200" r="180" fill="url(#h3_cyan_orb)"/>
 
-  <!-- Geometric Abstract Design Elements -->
-  <g opacity="0.18">
-    <circle cx="1020" cy="240" r="190" fill="none" stroke="#fff" stroke-width="2" stroke-dasharray="10 12"/>
-    <circle cx="1020" cy="240" r="130" fill="none" stroke="#fff" stroke-width="3"/>
-    <circle cx="1020" cy="240" r="70" fill="url(#accent_blue)" opacity="0.6"/>
+  <!-- AERIAL DRONE (Top Right Floating) -->
+  <g transform="translate(240, 40)" filter="url(#h3_shadow)">
+    <!-- Drone Central Body -->
+    <ellipse cx="140" cy="70" rx="42" ry="24" fill="url(#h3_cam_body)" stroke="#64748b" stroke-width="1.5"/>
+    <ellipse cx="140" cy="65" rx="28" ry="14" fill="#38bdf8" opacity="0.4"/>
+    <!-- Drone 4 Rotor Arms -->
+    <path d="M 110 65 L 45 40" stroke="#475569" stroke-width="5" stroke-linecap="round"/>
+    <path d="M 170 65 L 235 40" stroke="#475569" stroke-width="5" stroke-linecap="round"/>
+    <path d="M 120 78 L 65 105" stroke="#475569" stroke-width="5" stroke-linecap="round"/>
+    <path d="M 160 78 L 215 105" stroke="#475569" stroke-width="5" stroke-linecap="round"/>
+    <!-- Propellers (Spin Blur) -->
+    <ellipse cx="45" cy="40" rx="36" ry="7" fill="#94a3b8" opacity="0.4" stroke="#ffffff" stroke-width="1"/>
+    <ellipse cx="235" cy="40" rx="36" ry="7" fill="#94a3b8" opacity="0.4" stroke="#ffffff" stroke-width="1"/>
+    <ellipse cx="65" cy="105" rx="32" ry="6" fill="#94a3b8" opacity="0.4" stroke="#ffffff" stroke-width="1"/>
+    <ellipse cx="215" cy="105" rx="32" ry="6" fill="#94a3b8" opacity="0.4" stroke="#ffffff" stroke-width="1"/>
+    <!-- Drone Gimbal Camera -->
+    <circle cx="140" cy="94" r="12" fill="#0f172a" stroke="#38bdf8" stroke-width="2"/>
+    <circle cx="140" cy="94" r="5" fill="#38bdf8"/>
   </g>
 
-  <!-- Badge Tag -->
-  <g transform="translate(64, 56)">
-    <rect width="210" height="38" rx="19" fill="rgba(255,255,255,0.12)" stroke="rgba(255,255,255,0.2)"/>
-    <circle cx="20" cy="19" r="6" fill="#38bdf8"/>
-    <text x="36" y="24" font-size="13" fill="#ffffff" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-weight="700">جدیدترین مدل‌های ۲۰۲۶</text>
+  <!-- MIRRORLESS CAMERA (Foreground Center) -->
+  <g transform="translate(80, 120)" filter="url(#h3_shadow)">
+    <!-- Camera Body -->
+    <rect x="0" y="50" width="260" height="170" rx="20" fill="url(#h3_cam_body)" stroke="#475569" stroke-width="2.5"/>
+    <!-- Hand Grip on Left -->
+    <path d="M 0 65 Q 25 100, 25 150 Q 25 190, 0 210 Z" fill="#0f172a"/>
+    <!-- Viewfinder Pentaprism Top -->
+    <polygon points="90,50 115,20 165,20 190,50" fill="url(#h3_cam_body)" stroke="#475569" stroke-width="2"/>
+    <rect x="125" y="16" width="30" height="6" rx="2" fill="#000000"/>
+    <!-- Top Dials & Shutter -->
+    <rect x="35" y="40" width="22" height="12" rx="3" fill="#64748b"/>
+    <circle cx="46" cy="40" r="9" fill="#94a3b8"/>
+    <rect x="205" y="42" width="26" height="10" rx="3" fill="#64748b"/>
+    <!-- Red Accent Ring -->
+    <circle cx="140" cy="140" r="82" fill="none" stroke="#ef4444" stroke-width="3"/>
+    <!-- Outer Lens Barrel -->
+    <circle cx="140" cy="140" r="78" fill="#1e293b" stroke="#64748b" stroke-width="4"/>
+    <!-- Lens Focus Rings -->
+    <circle cx="140" cy="140" r="68" fill="#0f172a" stroke="#475569" stroke-width="3"/>
+    <!-- Front Glass Element -->
+    <circle cx="140" cy="140" r="54" fill="url(#h3_lens_glass)"/>
+    <!-- Anti-Reflective Optical Coating Rings -->
+    <circle cx="140" cy="140" r="42" fill="none" stroke="#38bdf8" stroke-width="2.5" opacity="0.8"/>
+    <circle cx="140" cy="140" r="26" fill="#0284c7" opacity="0.7"/>
+    <circle cx="140" cy="140" r="14" fill="#0369a1"/>
+    <!-- Glass Reflection Highlight -->
+    <path d="M 105 110 A 50 50 0 0 1 175 110 Z" fill="url(#h3_glass_refl)"/>
   </g>
 
-  <!-- Main Typography -->
-  <text x="64" y="160" font-size="38" fill="#ffffff" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-weight="900">دوربین‌های عکاسی ۴K و هلی‌شات‌های هوایی DJI</text>
-  
-  <text x="64" y="210" font-size="19" fill="#e2e8f0" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-weight="400" opacity="0.92">تجهیزات تخصصی تصویربرداری، لنزهای سینمایی و استابیلایزرهای هوشمند با کیفیت بی‌نظیر</text>
-
-  <!-- Visual Card Accent on Right -->
-  <g transform="translate(860, 100)" filter="url(#cardSh_blue)">
-    <rect width="260" height="280" rx="24" fill="rgba(255,255,255,0.07)" stroke="rgba(255,255,255,0.15)"/>
-    <circle cx="130" cy="110" r="54" fill="url(#accent_blue)"/>
-    <circle cx="130" cy="110" r="64" fill="none" stroke="#ffffff" stroke-width="2" opacity="0.3"/>
-    
-    <text x="130" y="210" font-size="18" text-anchor="middle" fill="#ffffff" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-weight="800">NEXTSHOP</text>
-    <text x="130" y="235" font-size="13" text-anchor="middle" fill="#38bdf8" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-weight="700">PREMIUM SELECTION</text>
-  </g>
-
-  <!-- Bottom Details Bar -->
-  <g transform="translate(64, 410)">
-    <circle cx="8" cy="8" r="4" fill="#38bdf8"/>
-    <text x="24" y="12" font-size="13" fill="#cbd5e1" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-weight="600">ضمانت اصالت ۱۰۰٪ کالای اورجینال</text>
-    
-    <circle cx="280" cy="8" r="4" fill="#38bdf8"/>
-    <text x="296" y="12" font-size="13" fill="#cbd5e1" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-weight="600">ارسال سریع سراسری</text>
-
-    <circle cx="480" cy="8" r="4" fill="#38bdf8"/>
-    <text x="496" y="12" font-size="13" fill="#cbd5e1" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-weight="600">۷ روز ضمانت بازگشت کالا</text>
+  <!-- Sparkles -->
+  <g fill="#38bdf8" opacity="0.9">
+    <polygon points="60,90 62,97 69,99 62,101 60,108 58,101 51,99 58,97"/>
+    <polygon points="480,240 482,247 489,249 482,251 480,258 478,251 471,249 478,247"/>
   </g>
 </svg>
